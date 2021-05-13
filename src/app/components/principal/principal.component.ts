@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from '../../auth/services/token-storage.service';
 import { Router } from '@angular/router';
+
 @Component({
 	selector: 'app-principal',
 	templateUrl: './principal.component.html',
@@ -19,4 +20,8 @@ export class PrincipalComponent implements OnInit {
 		}
 	}
 
+	logout() {
+		this.tokenStorage.signOut();
+		this.router.navigate(['']);
+	}
 }
